@@ -1,0 +1,24 @@
+﻿@model MyWeather.Models.ResponseWeather
+
+@{
+    ViewBag.Title = "Weather in " + Model.name;
+}
+
+@using (Html.BeginForm("Click", "OpenWeatherMap", FormMethod.Get))
+{
+    <p><b>Enter the town:</b></p>
+    <input type="text" name="city" />
+    <br />
+    <input type="submit" value="See the weather" />
+}
+
+<div>
+    <h3>Weather in @Model.name</h3> <br />
+    <b>City:</b> @Html.DisplayFor(model => model.name) <br />
+    <b>Country:</b> @Html.DisplayFor(model => model.sys.country) <br />
+    <b>Current Temperature:</b> @Html.DisplayFor(model => model.main.temp)°C <br />
+    <b>Min Temperature:</b> @Html.DisplayFor(model => model.main.temp_min)°C <br />
+    <b>Max Temperature:</b> @Html.DisplayFor(model => model.main.temp_max)°C <br />
+    <b>Weather:</b> @Html.DisplayFor(model => model.weather[0].description)  <br />
+
+</div>

@@ -1,18 +1,16 @@
 ﻿@model MyWeather.Models.RegisterUserModel
 
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Register your account";
 }
 
-<h2>Register</h2>
-
+<h2>Please, register your account</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RegisterUserModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
