@@ -15,10 +15,9 @@
 <div>
     <h3>Weather in @Model.name</h3> <br />
     <b>City:</b> @Html.DisplayFor(model => model.name) <br />
-    <b>Country:</b> @Html.DisplayFor(model => model.sys.country) <br />
+    <b>Country:</b> <img src="@Html.Raw("http://openweathermap.org/images/flags/" + Model.sys.country.ToLower() + ".png")" alt=""> @Html.DisplayFor(model => model.sys.country) <br />
     <b>Current Temperature:</b> @Html.DisplayFor(model => model.main.temp)°C <br />
     <b>Min Temperature:</b> @Html.DisplayFor(model => model.main.temp_min)°C <br />
     <b>Max Temperature:</b> @Html.DisplayFor(model => model.main.temp_max)°C <br />
-    <b>Weather:</b> @Html.DisplayFor(model => model.weather[0].description)  <br />
-
+    <b>Weather:</b> <img src="@Html.Raw("http://openweathermap.org/img/w/" + Model.weather[0].icon + ".png")" alt=""> @Html.DisplayFor(model => model.weather[0].description)  <br />
 </div>
