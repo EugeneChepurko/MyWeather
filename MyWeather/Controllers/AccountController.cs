@@ -68,7 +68,7 @@ namespace MyWeather.Controllers
                 ApplicationUser user = await UserManager.FindAsync(model.Email, model.Password);
                 if (user == null)
                 {
-                    ModelState.AddModelError("", "Неверный логин или пароль.");
+                    ModelState.AddModelError("", "Login or password is incorrect.");
                 }
                 else
                 {
